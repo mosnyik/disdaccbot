@@ -26,7 +26,10 @@ client.on("messageCreate", async (msg) => {
      Math.floor(Math.random()* 10)+1;
     msg.reply(`${quoteContent.data['quotes'][index].quote}`);
   } else if (msg.content === "!challenge"){
-    let challeng = ''
+    let challenge = await axios.get(
+      "https://drive.google.com/file/d/1erIlj0Hl9EAbd5hRcOgZtoUftvOsSazO/view?usp=sharing"
+    );
+    console.log(challenge.data);
     msg.reply(`Get a challenge here`)
   }else {
     
